@@ -1,8 +1,10 @@
+html{}
 body{
-    background-color: var(--bg);
+    
     font-family: var(--font);
-    margin: 30px;
-
+    overflow: hidden;
+    background-color: var(--bg);
+    height: 100vh;
 }
 
 
@@ -32,13 +34,12 @@ body{
     color: var(--purple-hue);
     text-align: center;
     margin: 30px 0px;
+    font-size: 25px;
 }
 
 .choices{
-    
     padding: 30px;
     position: relative;
-    
 }
 
 .img-style{
@@ -64,7 +65,7 @@ body{
 
 @media screen and (max-width: 767px){
     .header{
-        font-size: 10px;
+        font-size: 15px;
     }
     .img-style{
         width: 200px;
