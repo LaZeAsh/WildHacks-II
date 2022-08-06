@@ -1,8 +1,9 @@
-html{}
+html{
+    background-color: var(--bg);
+}
 body{
     
     font-family: var(--font);
-    overflow: hidden;
     background-color: var(--bg);
     height: 100vh;
 }

@@ -1,0 +1,36 @@
+.form-control{
+    background: transparent;
+    border: 5px dashed var(--purple-hue);
+}
+.btn:hover{
+    background-color: var(--purple-hue);
+    border: 5px dashed var(--purple-hue);       
+}
+.form-control:focus,
+.form-control:active {
+    background: transparent;
+}
+.form-check{
+    margin: 0 auto;
+}
+.mb-3, .mb-4{
+    max-width: 80%;
+    text-align:center;
+    align-items: center;
+    margin: 0 auto;
+    text-decoration: none;
+    background-color: black;
+    color: var(--purple-hue);
+}
+.form{
+    align-items: center;
+    text-align: center;
+    
+}
+
+@media screen and (max-width:768px){
+    .mb-3{
+        max-width: 100%;
+    }
+
+}
