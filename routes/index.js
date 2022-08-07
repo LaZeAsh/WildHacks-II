@@ -6,22 +6,6 @@ router.get('/', (req, res)=>{
     res.render('index.ejs')
 })
 
-router.get('/terrestrial', (req, res)=>{
-    res.render('create-post.ejs', {community: 'terrestrial'})
-})
-
-router.get('/rainforest', (req, res)=>{
-    res.render('create-post.ejs', {community: 'rainforest'})
-})
-
-router.get('/ocean', (req, res)=>{
-    res.render('create-post.ejs', {community: 'ocean'})
-})
-
-router.get('/desert', (req, res)=>{
-    res.render('create-post.ejs', {community: 'desert'})
-})
-
 router.get('/terrestrial/feed', async(req, res)=>{
     try{
         res.render('feed.ejs', {community: 'terrestrial', posts: await Post.find({community: 'terrestrial'})})
@@ -58,6 +42,7 @@ router.get('/desert/feed', async(req, res)=>{
     }
     
 })
+
 
 
 router.post('/terrestrial/feed', async(req, res)=>{
