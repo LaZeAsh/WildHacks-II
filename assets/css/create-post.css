@@ -15,8 +15,11 @@
     border: 5px dashed var(--purple-hue);       
 }
 .form-control:focus,
-.form-control:active {
+.form-control:active,
+.form-control {
     background: transparent;
+    color: var(--purple-hue);
+    font-family: var(--font);
 }
 .form-check{
     margin: 0 auto;
@@ -34,6 +37,11 @@
     align-items: center;
     text-align: center;
     
+}
+
+.header, .description{
+    width: 70%;
+    margin: 30px auto;
 }
 
 @media screen and (max-width:768px){

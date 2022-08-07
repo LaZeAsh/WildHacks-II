@@ -4,15 +4,13 @@
     padding: 0;
 }
 
-img{
-}
 
 .card-group{
     margin: 20px;
 }
 
 .card{
-    border: 5px solid var(--purple-hue);
+    border: 5px dashed var(--purple-hue);
     margin: 10px;
-    width: 30%;
+    max-width: 33vw;
 }

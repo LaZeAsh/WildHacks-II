@@ -14,12 +14,54 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/feed.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body style="background-color: #000;">
+    <nav class="navbar navbar-expand-xl" style="background-color: var(--white-hue-purple);">
+        <a href="" class="navbar-brand mb-0">
+            <span style="color: var(--purple-hue); font-weight: bold;">wildernez.</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggleMobileMenu"
+            aria-controls="toggleMobileMenu" aria-expanded="false" aria-label="Toggle Navigation" style="color:#eee"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="toggleMobileMenu">
+            <ul class="navbar-nav ms-auto text-center">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle mt-1" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Communities 🫂
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li><a class="dropdown-item" href="our-story">Land 🐯</a></li>
+                        <li><a class="dropdown-item" href="team">Oceans 🦈</a></li>
+                        <li><a class="dropdown-item" href="partners">Rainforests 🦋</a></li>
+                        <li><a class="dropdown-item" href="partners">Desert 🐪</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item active mt-1">
+                    <a href="our-projects" class="nav-link">Create Post 📈</a>
+                </li>
+                <!-- <li class="nav-item active">
+                        <a href="get-involved" class="nav-link">GET INVOLVED</a>
+                    </li> -->
+    
+    
+                <li class="nav-item mt-1">
+                    <a href="contact-us"><button type="button" class="btn btn-primary"
+                            style="background-color: var(--purple-hue); border: var(--white-hue-purple)"><span
+                                style="font-family: var(--font); font-size: 1.5rem;">Donate 🤑</span></button></a>
+                </li>
+            </ul>
+        </div>
+    
+    
+    
+    
+    </nav>
     <% if(community == 'terrestrial') { %>
         <h1 class="text-center header"><span>🌄</span> Plains and Mountains <span>🌄</span></h1>
     <% }%>
@@ -34,11 +76,12 @@
     <% } %>   
     <h2 class="text-center header">All Feed</h2>
     <div class="card-group">
+        <% console.log(posts.length/3) %> 
         <% posts.forEach(post => { %>
             
                 <div class="card">
                     <% if(community == 'terrestrial') { %>
-                        <img src="/img/land.jpg" class="card-img-top" alt="...">
+                        <img src="/img/land.jpg" class="card-img-top"  alt="...">
                     <% } %>
                     <% if(community == 'ocean') { %>
                         <img src="/img/ocean.jpg" class="card-img-top" alt="...">
@@ -58,6 +101,7 @@
                     </div>
                 </div>
         <% }) %>
+        
     </div>  
 </body>
 </html>

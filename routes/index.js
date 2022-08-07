@@ -9,7 +9,8 @@ router.get('/', (req, res)=>{
 router.get('/terrestrial/feed', async(req, res)=>{
     try{
         res.render('feed.ejs', {community: 'terrestrial', posts: await Post.find({community: 'terrestrial'})})
-    }catch{
+    }
+    catch{
         res.render('404.html')
     }
     
