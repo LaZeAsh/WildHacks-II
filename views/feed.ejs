@@ -33,18 +33,31 @@
         <h1 class="text-center header"><span>🌵</span> Deserts <span>🌵</span></h1>
     <% } %>   
     <h2 class="text-center header">All Feed</h2>
-    <% posts.forEach(post => { %>
-        <div class="card">
-            <img src="/img/desert.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title"><%= post.title %></h5>
-              <p class="card-text"><%= post.post %></p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted"><%= post.createdAt %> by <%= post.name %></small>
-            </div>
-          </div>
-    <% }) %>
-           
+    <div class="card-group">
+        <% posts.forEach(post => { %>
+            
+                <div class="card">
+                    <% if(community == 'terrestrial') { %>
+                        <img src="/img/land.jpg" class="card-img-top" alt="...">
+                    <% } %>
+                    <% if(community == 'ocean') { %>
+                        <img src="/img/ocean.jpg" class="card-img-top" alt="...">
+                    <% } %>
+                    <% if(community == 'rainforest') { %>
+                        <img src="/img/rainforest.jpg" class="card-img-top" alt="...">
+                    <% } %>
+                    <% if(community == 'desert') { %>
+                        <img src="/img/desert.jpg" class="card-img-top" alt="...">
+                    <% } %>
+                    <div class="card-body">
+                    <h5 class="card-title"><%= post.title %></h5>
+                    <p class="card-text"><%= post.post %></p>
+                    </div>
+                    <div class="card-footer">
+                    <small class="text-muted">Created on <%= post.createdAt.toDateString() %> by <%= post.name %></small>
+                    </div>
+                </div>
+        <% }) %>
+    </div>  
 </body>
 </html>

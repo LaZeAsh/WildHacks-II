@@ -22,6 +22,44 @@ router.get('/desert', (req, res)=>{
     res.render('create-post.ejs', {community: 'desert'})
 })
 
+router.get('/terrestrial/feed', async(req, res)=>{
+    try{
+        res.render('feed.ejs', {community: 'terrestrial', posts: await Post.find({community: 'terrestrial'})})
+    }catch{
+        res.render('404.html')
+    }
+    
+})
+
+router.get('/rainforest/feed', async(req, res)=>{
+    try{
+        res.render('feed.ejs', {community: 'rainforest',posts: await Post.find({community: 'rainforest'})})
+    }
+   catch{
+    res.render('404.html')
+   }
+})
+
+router.get('/ocean/feed', async(req, res)=>{
+    try{
+        res.render('feed.ejs', {community: 'ocean',posts: await Post.find({community: 'ocean'})})
+    }
+    catch{
+        res.render('404.html')
+    }
+})
+
+router.get('/desert/feed', async(req, res)=>{
+    try{
+        res.render('feed.ejs', {community: 'desert',posts: await Post.find({community: 'desert'})})
+    }
+    catch{
+        res.render('404.html')
+    }
+    
+})
+
+
 router.post('/terrestrial/feed', async(req, res)=>{
     const post = new Post({
         name: req.body.name,
@@ -30,11 +68,11 @@ router.post('/terrestrial/feed', async(req, res)=>{
         community: 'terrestrial'
     })
 
-    if(req.body.charity == 1)
+    if(req.body.flexRadioDefault.value == 'charity')
     {
         post.tag = 'charity'
     }
-    else if (req.body.support == 1)
+    else if (req.body.flexRadioDefault.value == 'support')
     {
         post.tag = 'support'
     }
@@ -50,16 +88,85 @@ router.post('/terrestrial/feed', async(req, res)=>{
     
 })
 
-router.post('/rainforest/feed', (req, res)=>{
-    res.render('feed.ejs', {community: 'rainforest'})
+router.post('/rainforest/feed', async(req, res)=>{
+    const post = new Post({
+        name: req.body.name,
+        post: req.body.post,
+        title: req.body.title,
+        community: 'rainforest'
+    })
+
+    if(req.body.flexRadioDefault.value == 'charity')
+    {
+        post.tag = 'charity'
+    }
+    else if (req.body.flexRadioDefault.value == 'support')
+    {
+        post.tag = 'support'
+    }
+    else{
+        post.tag = 'trivia'
+    }
+    try{
+        const newPost = await post.save()
+        res.render('feed.ejs', {community: 'rainforest', posts: await Post.find({community: 'rainforest'})})
+    }catch{
+        res.render('404.html')
+    }
 })
 
-router.post('/ocean/feed', (req, res)=>{
-    res.render('feed.ejs', {community: 'ocean'})
+router.post('/ocean/feed', async(req, res)=>{
+    const post = new Post({
+        name: req.body.name,
+        post: req.body.post,
+        title: req.body.title,
+        community: 'ocean'
+    })
+
+    if(req.body.flexRadioDefault.value == 'charity')
+    {
+        post.tag = 'charity'
+    }
+    else if (req.body.flexRadioDefault.value == 'support')
+    {
+        post.tag = 'support'
+    }
+    else{
+        post.tag = 'trivia'
+    }
+    try{
+        const newPost = await post.save()
+        res.render('feed.ejs', {community: 'ocean', posts: await Post.find({community: 'ocean'})})
+    }catch{
+        res.render('404.html')
+    }
 })
 
-router.post('/desert/feed', (req, res)=>{
-    res.render('feed.ejs', {community: 'desert'})
+router.post('/desert/feed', async(req, res)=>{
+    const post = new Post({
+        name: req.body.name,
+        post: req.body.post,
+        title: req.body.title,
+        community: 'desert'
+    })
+
+    if(req.body.flexRadioDefault.value == 'charity')
+    {
+        post.tag = 'charity'
+    }
+    else if (req.body.flexRadioDefault.value == 'support')
+    {
+        post.tag = 'support'
+    }
+    else{
+        post.tag = 'trivia'
+    }
+    try{
+        const newPost = await post.save()
+        res.render('feed.ejs', {community: 'desert', posts: await Post.find({community: 'desert'})})
+    }catch{
+        res.render('404.html')
+    }
 })
 
 module.exports = router
