@@ -13,9 +13,18 @@ const postSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    title:{
+        type: String,
+        required: true
+    },
     community:{
         type: String,
         required:true
+    },
+    createdAt:{
+        type: Date,
+        required: true,
+        default: Date.now
     }
 })
 

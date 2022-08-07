@@ -14,11 +14,89 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/create-post.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
     
+    <% if(community == 'terrestrial') { %>
+        <h1 class="text-center header"><span>🌄</span> Plains and Mountains <span>🌄</span></h1>
+        <p class="text-center description">There is a huge variety of wonderful species that you can 
+            find in this habitat.<br> From <span>🐵</span> to <span>🐴</span> to <span>🦁</span> to <span>🦌</span> to <span>🐻</span> to <span>🦏</span> to <span>🐯</span> to <span>🦥</span> and what not... 
+            <br>Post anything you want to regarding 
+            any particular species that is found in this habitat and let
+            others know about it. You can post about a campaign or a fund raising organisation
+            or even some random facts about your favorite species.
+        </p>
+    <% }%>
+    <% if(community == 'ocean') { %>
+        <h1 class="text-center header"><span>🌊</span> Seas and Oceans <span>🌊</span></h1>
+        <p class="text-center description">There is a huge variety of wonderful species that you can 
+            find in this habitat.<br> From <span>🐬</span> to <span>🐙</span> to <span>🦀</span> to <span>🐠</span> to <span>🐳</span> to <span>🐢</span> to <span>🦞</span> to <span>🦦</span> and what not... 
+            <br>Post anything you want to regarding 
+            any particular species that is found in this habitat and let
+            others know about it. You can post about a campaign or a fund raising organisation
+            or even some random facts about your favorite species.
+        </p>
+    <% }%>
+    <% if(community == 'rainforest') { %>
+        <h1 class="text-center header"><span>🌳</span> Tropical Rainforests <span>🌳</span></h1>
+        <p class="text-center description">There is a huge variety of wonderful species that you can 
+            find in this habitat.<br> From <span>🐸</span> to <span>🐊</span> to <span>🐍</span> to <span>🐦</span> to <span>🦜</span> to <span>🐨</span> to <span>🦋</span> to <span>🦚</span> and what not... 
+            <br>Post anything you want to regarding 
+            any particular species that is found in this habitat and let
+            others know about it. You can post about a campaign or a fund raising organisation
+            or even some random facts about your favorite species.
+        </p>
+    <% }%>
+    <% if(community == 'desert') { %>
+        <h1 class="text-center header"><span>🌵</span> Deserts <span>🌵</span></h1>
+        <p class="text-center description">There is a huge variety of wonderful species that you can 
+            find in this habitat.<br> From <span>🐪</span> to <span>🐍</span> to <span>🦂</span> to <span>🦊</span> to <span>🦎</span> to <span>🐫</span> and what not... 
+            <br>Post anything you want to regarding 
+            any particular species that is found in this habitat and let
+            others know about it. You can post about a campaign or a fund raising organisation
+            or even some random facts about your favorite species.
+        </p>
+    <% }%>
+    <h2 class="text-center header">Submit a post!</h2>
+    <div class="form">
+        <form action= "/<%= community %>/feed " method="POST">
+            <div class="form-floating mb-4">
+                <input type="text" class="form-control" id="floatingInput" name="name">
+                <label for="floatingInput">Author Name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" name="title">
+                <label for="floatingInput">Post Title</label>
+            </div>
+            <h1 class="mb-4 header">Post Type:</h1>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="charity" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    NGOs/Charities
+                </label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="support" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Support Groups
+                </label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="trivia" id="flexRadioDefault3">
+                <label class="form-check-label" for="flexRadioDefault3">
+                    General Trivia
+                </label>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea class="form-control" id="floatingTextarea" style="width: 100%;height:400px;resize: none;" name="post"></textarea>
+                <label for="floatingTextarea">Post Content</label>
+            </div>
+            <button type="submit" class="btn btn-primary mb-3 form-control" style="width:20%">Submit!</button>
+        </form>
+    </div>
 </body>
 </html>

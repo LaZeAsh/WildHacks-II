@@ -2,6 +2,14 @@
     background: transparent;
     border: 5px dashed var(--purple-hue);
 }
+
+.description{
+    color: var(--purple-hue);
+    font-size: 15px;
+    line-height: 3;
+    border: 1px solid var(--purple-hue);
+}
+
 .btn:hover{
     background-color: var(--purple-hue);
     border: 5px dashed var(--purple-hue);       

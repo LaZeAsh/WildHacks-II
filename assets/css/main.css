@@ -21,13 +21,14 @@ body{
     color: var(--purple-hue);
     font-weight: lighter;
     font-size: 20px;
+    line-height: 2;
 }
 
 .info p:first-child{
     font-size: 18px;
 }
 
-.info p span{
+span{
     font-size: 30px;
 }
 
