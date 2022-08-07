@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wilderness | Feed</title>
+    <title>Wildernez | Feed</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -22,7 +22,7 @@
 </head>
 <body style="background-color: #000;">
     <nav class="navbar navbar-expand-xl" style="background-color: var(--white-hue-purple);">
-        <a href="" class="navbar-brand mb-0">
+        <a href="/" class="navbar-brand mb-0">
             <span style="color: var(--purple-hue); font-weight: bold;">wildernez.</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggleMobileMenu"
@@ -33,34 +33,90 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle mt-1" href="#" id="navbarDarkDropdownMenuLink" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        Communities 🫂
+                        Communities 4️⃣
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                        <li><a class="dropdown-item" href="our-story">Land 🐯</a></li>
-                        <li><a class="dropdown-item" href="team">Oceans 🦈</a></li>
-                        <li><a class="dropdown-item" href="partners">Rainforests 🦋</a></li>
-                        <li><a class="dropdown-item" href="partners">Desert 🐪</a></li>
+                        <li><a class="dropdown-item" href="/terrestrial/feed">Plains and Mountains 🐯</a></li>
+                        <li><a class="dropdown-item" href="/ocean/feed">Seas and Oceans 🦈</a></li>
+                        <li><a class="dropdown-item" href="/rainforest/feed">Tropical Rainforests 🦋</a></li>
+                        <li><a class="dropdown-item" href="/desert/feed">Deserts 🐪</a></li>
                     </ul>
                 </li>
-                <li class="nav-item active mt-1">
-                    <a href="our-projects" class="nav-link">Create Post 📈</a>
+                <li class="nav-item">
+                    <%if (community == 'terrestrial') {%>
+                        <a class="nav-link mt-1" href="/terrestrial/feed">
+                            All Feed 
+                        </a>    
+                    <%}%>
+                    <%if (community == 'ocean') {%>
+                        <a class="nav-link mt-1" href="/ocean/feed">
+                            All Feed 
+                        </a>    
+                    <%}%>
+                    <%if (community == 'rainforest') {%>
+                        <a class="nav-link mt-1" href="/rainforest/feed">
+                            All Feed 
+                        </a>    
+                    <%}%>
+                    <%if (community == 'desert') {%>
+                        <a class="nav-link mt-1" href="/desert/feed">
+                            All Feed 
+                        </a>    
+                    <%}%>
                 </li>
-                <!-- <li class="nav-item active">
-                        <a href="get-involved" class="nav-link">GET INVOLVED</a>
-                    </li> -->
-    
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle mt-1" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Tags #️⃣
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <% if(community == 'terrestrial') {%>
+                            <li><a class="dropdown-item" href="/terrestrial/feed/charity"># NGOs/Charities 💰</a></li>
+                            <li><a class="dropdown-item" href="/terrestrial/feed/support"># Support Groups 🗣️</a></li>
+                            <li><a class="dropdown-item" href="/terrestrial/feed/trivia"># Trivia ↗️</a></li>
+                        <%}%>
+                        <% if(community == 'ocean') {%>
+                            <li><a class="dropdown-item" href="/ocean/feed/charity"># NGOs/Charities 💰</a></li>
+                            <li><a class="dropdown-item" href="/ocean/feed/support"># Support Groups 🗣️</a></li>
+                            <li><a class="dropdown-item" href="/ocean/feed/trivia"># Trivia ↗️</a></li>
+                        <%}%>
+                        <% if(community == 'rainforest') {%>
+                            <li><a class="dropdown-item" href="/rainforest/feed/charity"># NGOs/Charities 💰</a></li>
+                            <li><a class="dropdown-item" href="/rainforest/feed/support"># Support Groups 🗣️</a></li>
+                            <li><a class="dropdown-item" href="/rainforest/feed/trivia"># Trivia ↗️</a></li>
+                        <%}%>
+                        <% if(community == 'desert') {%>
+                            <li><a class="dropdown-item" href="/desert/feed/charity"># NGOs/Charities 💰</a></li>
+                            <li><a class="dropdown-item" href="/desert/feed/support"># Support Groups 🗣️</a></li>
+                            <li><a class="dropdown-item" href="/desert/feed/trivia"># Trivia ↗️</a></li>
+                        <%}%>
+                    </ul>
+                </li>
     
                 <li class="nav-item mt-1">
-                    <a href="contact-us"><button type="button" class="btn btn-primary"
+                    <%if (community == 'terrestrial') {%>
+                        <a href="/terrestrial/post"><button type="button" class="btn btn-primary"
                             style="background-color: var(--purple-hue); border: var(--white-hue-purple)"><span
-                                style="font-family: var(--font); font-size: 1.5rem;">Donate 🤑</span></button></a>
+                                style="font-family: var(--font); font-size: 1.5rem;">Create Post 📈</span></button></a>    
+                    <%}%>
+                    <%if (community == 'ocean') {%>
+                        <a href="/ocean/post"><button type="button" class="btn btn-primary"
+                            style="background-color: var(--purple-hue); border: var(--white-hue-purple)"><span
+                                style="font-family: var(--font); font-size: 1.5rem;">Create Post 📈</span></button></a>   
+                    <%}%>
+                    <%if (community == 'rainforest') {%>
+                        <a href="/rainforest/post"><button type="button" class="btn btn-primary"
+                            style="background-color: var(--purple-hue); border: var(--white-hue-purple)"><span
+                                style="font-family: var(--font); font-size: 1.5rem;">Create Post 📈</span></button></a>   
+                    <%}%>
+                    <%if (community == 'desert') {%>
+                        <a href="/desert/post"><button type="button" class="btn btn-primary"
+                            style="background-color: var(--purple-hue); border: var(--white-hue-purple)"><span
+                                style="font-family: var(--font); font-size: 1.5rem;">Create Post 📈</span></button></a>    
+                    <%}%>
                 </li>
             </ul>
         </div>
-    
-    
-    
-    
     </nav>
     <% if(community == 'terrestrial') { %>
         <h1 class="text-center header"><span>🌄</span> Plains and Mountains <span>🌄</span></h1>
