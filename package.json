@@ -5,7 +5,8 @@
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "mongoose": "^6.5.1",
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "twilio": "^3.80.0"
   },
   "name": "wildhacks-ii",
   "version": "1.0.0",

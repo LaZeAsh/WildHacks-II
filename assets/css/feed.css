@@ -7,10 +7,13 @@
 
 .card-group{
     margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+
 }
 
 .card{
-    border: 5px dashed var(--purple-hue);
+    border: 5px solid var(--purple-hue);
     margin: 10px;
-    max-width: 33vw;
+    max-width: 33%;
 }

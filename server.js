@@ -1,7 +1,6 @@
 if(process.env.NODE_ENV !== 'production'){
     require('dotenv').config()
 }
-
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
@@ -21,4 +20,7 @@ const indexRouter = require('./routes/index')
 
 app.use('/',indexRouter)
 
-app.listen(process.env.PORT || 3000)
+try{
+    app.listen(process.env.PORT || 3000)
+}catch(e){}
+
